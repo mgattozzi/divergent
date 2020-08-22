@@ -1,0 +1,13 @@
+{
+  "foo": "A",
+  "bar": "C",
+  "baz": {
+    "zed": "bleh"
+  },
+  "blah": "oh no",
+  "array": [0, 1, 2, 3],
+  "bool1": true,
+  "bool2": true,
+  "empty": null,
+  "weird": null
+}
