@@ -112,12 +112,10 @@ impl JsonPath {
     self.path.pop();
   }
   fn inc_array(&mut self) {
-    if let Some(v) = self.path.last_mut() {
-      let x = match v {
-        JsonType::Array(i) => *i + 1,
-        _ => panic!("Oh no this not array"),
-      };
-      *v = JsonType::Array(x);
+    if let Some(JsonType::Array(v)) = self.path.last_mut() {
+      *v += 1;
+    } else {
+      panic!("Oh no this is not array");
     }
   }
 }
