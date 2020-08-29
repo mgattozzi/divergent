@@ -1,13 +1,13 @@
 {
+  "bleh": "oh no",
   "bar": "B",
   "foo": "A",
+  "empty": null,
+  "bool1": true,
+  "array": [0, 1, 3],
+  "bool2": false,
+  "weird": {},
   "baz": {
     "zed": "pie"
-  },
-  "bleh": "oh no",
-  "array": [0, 1, 3],
-  "bool1": true,
-  "bool2": false,
-  "empty": null,
-  "weird": {}
+  }
 }
