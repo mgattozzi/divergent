@@ -1,3 +1,4 @@
+pub mod pretty_print;
 use color_eyre::eyre::Result;
 use crossbeam::crossbeam_channel::{self, Receiver, Sender};
 use im::Vector;
@@ -170,12 +171,12 @@ impl Hash for DiffKind {
     }
 }
 
-#[derive(Clone, PartialEq, Eq, Debug, Hash)]
+#[derive(Clone, PartialOrd, Ord, PartialEq, Eq, Debug, Hash)]
 pub struct JsonPath {
     path: Vector<JsonType>,
 }
 
-#[derive(Clone, PartialEq, Eq, Debug, Hash)]
+#[derive(Clone, PartialOrd, Ord, PartialEq, Eq, Debug, Hash)]
 pub enum JsonType {
     Object(String),
     Array(usize),

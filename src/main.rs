@@ -1,4 +1,5 @@
 use color_eyre::eyre::Result;
+use divergent::pretty_print::print_tables;
 use std::path::PathBuf;
 use structopt::StructOpt;
 use tracing_subscriber;
@@ -16,9 +17,13 @@ fn main() -> Result<()> {
     tracing_subscriber::fmt::init();
     let opt = Opt::from_args();
 
-    for diff in divergent::run_json(&opt.first, &opt.second)?.iter() {
-        println!("{}", diff);
-    }
+    let print_std = None;
+    print_tables(
+        divergent::run_json(&opt.first, &opt.second)?.iter(),
+        &opt.first,
+        &opt.second,
+        print_std,
+    )?;
 
     Ok(())
 }
